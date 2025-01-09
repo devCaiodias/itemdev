@@ -1,4 +1,5 @@
 import styles from '../styles/NavBar.module.css'
+import { ShoppingCart } from 'lucide-react'
 
 export default function NavBar() {
     return (
@@ -12,7 +13,7 @@ export default function NavBar() {
                         <p>Sobre a loja</p>
                         <p>Criador da loja</p>
                     </nav>
-                <h2 className={styles.carrinho}>Carrinho</h2>
+                <h2 className={styles.carrinho}><ShoppingCart /></h2>
             </div>
         
         </>
