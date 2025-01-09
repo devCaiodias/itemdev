@@ -1,9 +1,10 @@
 import Image from "next/image";
+import TopProdut from "./components/TopProdut";
 
 export default function Home() {
   return (
     <>
-      <h1>inicio de um começo</h1>
+      <TopProdut />
     </>
   );
 }

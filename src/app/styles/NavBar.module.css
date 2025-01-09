@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+.navbar {
+    position: relative;
+    border-top: #1a1919;
+    padding: 1.5rem 0px 1.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: rgb(255, 115, 0);    
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #06141b;
+    font-family: "Tajawal", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.nav {
+    display: flex;
+    gap: 3rem;
+    font-weight: 900;
+}
+
+.carrinho {
+    text-transform: uppercase;
+    margin-right: 1.5rem;
+}

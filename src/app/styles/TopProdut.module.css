@@ -1,0 +1,14 @@
+.topcontainer {
+    background-color: #9babab;
+    margin: 0px 30px 5px 30px;
+    height: 500px;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    width: 400px;
+    
+}
