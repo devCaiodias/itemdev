@@ -1,45 +1,39 @@
-import img from '../../../public/download (2).jpg'
+'use client'
 import Image from 'next/image'
 import styles from '../styles/CarProdut.module.css'
+import { useEffect, useState } from 'react'
+import fechProduct from '../api/fechProduct'
+
+interface Props {
+    id: number,
+    thumbnail: string,
+    title: string
+    price: number
+}
 
 export default function CartProduct() {
+    const [product, setProduct] = useState([])
+
+    useEffect(() => {
+        fechProduct('hedset').then((response) => {
+            setProduct(response)
+        })
+    }, [])
+
+    console.log(product)
+
+    
     return (
         <div className={styles.produtoMain}>
-            <div className={styles.produtoCart}>
+            {product.map((produtos: Props) => {
+                return <div key={produtos.id} className={styles.produtoCart}>
                 <div className={styles.produto}>
-                    <Image src={img} alt='produto' width={150} className={styles.imgproduto} />
+                    <Image src={produtos.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt={produtos.title} width={150} height={150} className={styles.imgproduto} />
                 </div>
-                <p>Produto</p>
-                <p>$ 99.99</p>
+                <p className={styles.titleProduct}>{produtos.title}</p>
+                <p>$ {produtos.price}</p>
             </div>
-            <div className={styles.produtoCart}>
-                <div className={styles.produto}>
-                    <Image src={img} alt='produto' width={150} className={styles.imgproduto} />
-                </div>
-                <p>Produto</p>
-                <p>$ 99.99</p>
-            </div>
-            <div className={styles.produtoCart}>
-                <div className={styles.produto}>
-                    <Image src={img} alt='produto' width={150} className={styles.imgproduto} />
-                </div>
-                <p>Produto</p>
-                <p>$ 99.99</p>
-            </div>
-            <div className={styles.produtoCart}>
-                <div className={styles.produto}>
-                    <Image src={img} alt='produto' width={150} className={styles.imgproduto} />
-                </div>
-                <p>Produto</p>
-                <p>$ 99.99</p>
-            </div>
-            <div className={styles.produtoCart}>
-                <div className={styles.produto}>
-                    <Image src={img} alt='produto' width={150} className={styles.imgproduto} />
-                </div>
-                <p>Produto</p>
-                <p>$ 99.99</p>
-            </div>
+            })}
         </div>
     )
 }

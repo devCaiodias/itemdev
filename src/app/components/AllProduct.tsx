@@ -12,7 +12,7 @@ export default function AllProduct() {
                 <p>teclado</p>
                 <p>Monitor</p>
             </div>
-
+            
             <CartProduct />
         </div>
     )

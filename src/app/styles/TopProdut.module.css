@@ -1,5 +1,5 @@
 .topcontainer {
-    background-color: #9babab;
+    background-color: #f6f7f7;
     margin: 0px 30px 5px 30px;
     height: 500px;
     border-radius: 0px 0px 5px 5px;
@@ -10,5 +10,28 @@
 
 .info {
     width: 400px;
-    
+}
+
+.info h2 {
+    font-size: 2rem;
+}
+
+.info p {
+    font-size: 1.3rem;
+    padding: 5px 0px;
+}
+
+.btnAddCart {
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #2b3250;
+    color: white;
+}
+
+.imgtopitem {
+    margin-left: 40px;
 }
