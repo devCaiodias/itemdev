@@ -1,0 +1,72 @@
+.footer_container {
+    display:  flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    padding: 5px;
+}
+
+.footer_title span {
+    color: rgb(255, 115, 0);  
+}
+
+.link_copy {
+    border: 1px solid black;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    padding: 5px;
+}
+
+.footer_linck {
+    display: flex;
+    padding: 10px;
+}
+
+.footer_linck p {
+    padding: 0px 20px 0px 0px;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+}
+
+.icon_copy {
+    padding: 0px 10px;
+}
+
+.midias_social {
+    border: 1px solid black;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.rede_social {
+    display: flex;
+    justify-content: center;
+}
+
+.git {
+    padding: 5px;
+    text-align: center;
+}
+
+.linkedin {
+    padding: 5px;
+    padding-left: 30px;
+}
+
+.email {
+    padding: 10px;
+}
+
+.email span {
+    color: rgb(255, 115, 0);
+}

@@ -1,4 +1,6 @@
 import NavBar from "./NavBar"
+import Foter from "./Foter"
+
 
 
 interface Props {
@@ -12,6 +14,7 @@ export default function MainContainer({children}: Readonly<Props>) {
         <>
             <NavBar />
             {children}
+            <Foter />
         </>
     )
 }
