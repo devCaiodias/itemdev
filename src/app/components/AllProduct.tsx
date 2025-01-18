@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import styles from '../styles/AllProduct.module.css'
-import CartProduct from './CarProduct'
 
 export default function AllProduct() {
     return (
@@ -7,13 +7,12 @@ export default function AllProduct() {
             <h1 className={styles.textomain}>All Package</h1>
 
             <div className={styles.navCategoria}>
-                <p>Hedset</p>
-                <p>Computadores</p>
-                <p>teclado</p>
-                <p>Monitor</p>
+                <Link href='../hedset' >Hedset</Link>
+                <Link href='../computadores' >Computadores</Link>
+                <Link href='../teclado' >Teclado</Link>
+                <Link href='../monitor' >Monitor</Link>
+                <Link href='../mouse' >Mouse</Link>
             </div>
-            
-            <CartProduct />
         </div>
     )
 }
