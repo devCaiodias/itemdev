@@ -10,3 +10,13 @@
     margin-top: 20px;
     gap: 50px;
 }
+
+.navCategoria button{
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.navCategoria button:hover {
+    text-decoration: underline;
+}

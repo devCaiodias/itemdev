@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/CarProdut.module.css'
 import { useEffect, useState } from 'react'
 import fechProduct from '../api/fechProduct'
+import Link from 'next/link'
 
 interface Props {
     id: number,
@@ -26,13 +27,15 @@ export default function Computadores() {
     return (
         <div className={styles.produtoMain}>
             {product.map((produtos: Props) => {
-                return <div key={produtos.id} className={styles.produtoCart}>
+                return <Link href={`../Product/${produtos.id}`} key={produtos.id}>
+                 <div key={produtos.id} className={styles.produtoCart}>
                 <div className={styles.produto}>
                     <Image src={produtos.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt={produtos.title} width={150} height={150} className={styles.imgproduto} />
                 </div>
                 <p className={styles.titleProduct}>{produtos.title}</p>
-                <p>$ {produtos.price}</p>
+                <p>R$ {produtos.price}</p>
             </div>
+            </Link>
             })}
         </div>
     )

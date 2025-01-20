@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import MainContainer from "./components/MainContainer";
+import MainContainer from "./components/layout/MainContainer";
 
 export const metadata: Metadata = {
   title: "itemdev",
@@ -16,7 +16,6 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <MainContainer>
-
           {children}
         </MainContainer>
       </body>

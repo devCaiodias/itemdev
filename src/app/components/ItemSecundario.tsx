@@ -16,7 +16,7 @@ export default function ItemSecundario() {
     const [monitor, setMonitor] = useState<Props | null>(null)
 
     useEffect(() => {
-        fechProduct('teclados').then((response) => {
+        fechProduct('hedset').then((response) => {
             setTeclado(response[11])
         })
     }, [])
@@ -41,7 +41,7 @@ export default function ItemSecundario() {
                     <div className={styles.infoitem}>
                         <div className={styles.infotext}>
                             <h2>{teclado.title}</h2>
-                            <p className={styles.priceItem}>$ {teclado.price}</p>
+                            <p className={styles.priceItem}>R$ {teclado.price}</p>
                         </div>
                         <Image src={teclado.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
                     </div>
@@ -57,7 +57,7 @@ export default function ItemSecundario() {
                     <div className={styles.infoitem}>
                         <div className={styles.infotext}>
                             <h2>{mouse.title}</h2>
-                            <p className={styles.priceItem}>$ {mouse.price}</p>
+                            <p className={styles.priceItem}>R$ {mouse.price}</p>
                         </div>
                         <Image src={mouse.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
                     </div>
@@ -71,7 +71,7 @@ export default function ItemSecundario() {
                     <div className={styles.infoitem}>
                         <div className={styles.infotext}>
                             <h2>{monitor.title}</h2>
-                            <p className={styles.priceItem}>$ {monitor.price}</p>
+                            <p className={styles.priceItem}>R$ {monitor.price}</p>
                         </div>
                         <Image src={monitor.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
                     </div>
