@@ -1,8 +1,8 @@
 'use client'
-import Computadores from '../computadores/page';
-import Hedset from '../hedset/page';
-import Monitor from '../monitor/page';
-import Mouse from '../mouse/page';
+import Computadores from '../pagina/computadores/page';
+import Hedset from '../pagina/hedset/page';
+import Monitor from '../pagina/monitor/page';
+import Mouse from '../pagina/mouse/page';
 import styles from '../styles/AllProduct.module.css'
 import { useState } from 'react';
 

@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
-import styles from '../styles/CarProdut.module.css'
+import styles from '../../styles/CarProdut.module.css'
 import { useEffect, useState } from 'react'
-import fechProduct from '../api/fechProduct'
+import fechProduct from '../../api/fechProduct'
 import Link from 'next/link'
 
 interface Props {
@@ -12,16 +12,14 @@ interface Props {
     price: number
 }
 
-export default function Monitor() {
+export default function Hedset() {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-        fechProduct('monitor').then((response) => {
+        fechProduct('hedset').then((response) => {
             setProduct(response)
         })
     }, [])
-
-    console.log(product)
 
     
     return (

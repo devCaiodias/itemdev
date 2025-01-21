@@ -1,5 +1,5 @@
 
-import Hedset from "./hedset/page";
+import Hedset from "./pagina/hedset/page";
 import TopProdut from "./components/TopProdut"
 import ItemSecundario from "./components/ItemSecundario"
 import AllProduct from "./components/AllProduct"
