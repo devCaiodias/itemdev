@@ -12,6 +12,11 @@
     width: 400px;
 }
 
+.link_titletop {
+    text-decoration: none;
+    color: black;
+}
+
 .info h2 {
     font-size: 2rem;
 }

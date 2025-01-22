@@ -3,8 +3,10 @@ import styles from '../styles/ItemSecundario.module.css'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import fechProduct from '../api/fechProduct'
+import Link from 'next/link'
 
 interface Props {
+    id: string | number,
     title: string,
     price: number,
     thumbnail: string
@@ -38,13 +40,16 @@ export default function ItemSecundario() {
             <div className={styles.containerItem}>
                 {teclado ? (
                     <>
-                    <div className={styles.infoitem}>
-                        <div className={styles.infotext}>
-                            <h2>{teclado.title}</h2>
-                            <p className={styles.priceItem}>R$ {teclado.price}</p>
+                        <div className={styles.infoitem}>
+                            <div className={styles.infotext}>
+                                <Link href={`../Product/${teclado.id}`} key={teclado.id}>
+                                    <h2>{teclado.title}</h2>
+                                    <p className={styles.priceItem}>R$ {teclado.price}</p>
+                                </Link>
+                            </div>
+                            <Image src={teclado.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
                         </div>
-                        <Image src={teclado.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
-                    </div>
+                    
                     </>
                 ): (
                     <p>Carregando</p>
@@ -54,13 +59,16 @@ export default function ItemSecundario() {
 
                 {mouse ? (
                     <>
-                    <div className={styles.infoitem}>
-                        <div className={styles.infotext}>
-                            <h2>{mouse.title}</h2>
-                            <p className={styles.priceItem}>R$ {mouse.price}</p>
+                        <div className={styles.infoitem}>
+                            <div className={styles.infotext}>
+                            <Link href={`../Product/${mouse.id}`} key={mouse.id}>
+                                <h2>{mouse.title}</h2>
+                                <p className={styles.priceItem}>R$ {mouse.price}</p>
+                            </Link>
+                            </div>
+                            <Image src={mouse.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
                         </div>
-                        <Image src={mouse.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
-                    </div>
+                    
                     </>
                 ): (
                     <p>Carregando</p>
@@ -68,13 +76,16 @@ export default function ItemSecundario() {
 
                 {monitor ? (
                     <>
-                    <div className={styles.infoitem}>
-                        <div className={styles.infotext}>
-                            <h2>{monitor.title}</h2>
-                            <p className={styles.priceItem}>R$ {monitor.price}</p>
+                        <div className={styles.infoitem}>
+                            <div className={styles.infotext}>
+                            <Link href={`../Product/${monitor.id}`} key={monitor.id}>
+                                <h2>{monitor.title}</h2>
+                                <p className={styles.priceItem}>R$ {monitor.price}</p>
+                            </Link>
+                            </div>
+                            <Image src={monitor.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
                         </div>
-                        <Image src={monitor.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='img' width={150} height={150} className={styles.imgSecundaria} />
-                    </div>
+                    
                     </>
                 ): (
                     <p>Carregando</p>

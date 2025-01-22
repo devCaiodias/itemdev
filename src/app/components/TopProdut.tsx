@@ -3,8 +3,10 @@ import styles from '../styles/TopProdut.module.css'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import fechProduct from '../api/fechProduct'
+import Link from 'next/link'
 
 interface Props {
+    id: string | number,
     title: string,
     thumbnail: string
 }
@@ -26,12 +28,15 @@ export default function TopProdut() {
             {topProduct ? (
                 <>
                 <div className={styles.info}>
-                    <h2>{topProduct.title}</h2>
-                    <p>Nosso Top Produto da loja</p>
+                    <Link href={`../Product/${topProduct.id}`} key={topProduct.id} className={styles.link_titletop}>
+                        <h2>{topProduct.title}</h2>
+                        <p>Nosso Top Produto da loja</p>
+                    </Link>
                     <button className={styles.btnAddCart}>add Cart</button>
                 </div>
 
                 <Image src={topProduct.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt='produto' width={400} height={400} className={styles.imgtopitem} />
+                
                 </>
                 
             ): (

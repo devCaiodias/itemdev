@@ -27,14 +27,15 @@ export default function Mouse() {
     return (
         <div className={styles.produtoMain}>
             {product.map((produtos: Props) => {
-                return <Link href={`../Product/${produtos.id}`} key={produtos.id}> <div key={produtos.id} className={styles.produtoCart}>
+                return <div key={produtos.id} className={styles.produtoCart}>
                 <div className={styles.produto}>
                     <Image src={produtos.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt={produtos.title} width={150} height={150} className={styles.imgproduto} />
                 </div>
-                <p className={styles.titleProduct}>{produtos.title}</p>
-                <p>R$ {produtos.price}</p>
+                <Link href={`../Product/${produtos.id}`} key={produtos.id}>
+                    <p className={styles.titleProduct}>{produtos.title}</p>
+                    <p>R$ {produtos.price}</p>
+                </Link>
             </div>
-            </Link>
             })}
         </div>
     )
