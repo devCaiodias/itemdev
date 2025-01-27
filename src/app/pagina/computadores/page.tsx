@@ -4,6 +4,8 @@ import styles from '../../styles/CarProdut.module.css'
 import { useEffect, useState } from 'react'
 import fechProduct from '../../api/fechProduct'
 import Link from 'next/link'
+import { ShoppingCart } from 'lucide-react'
+import Loding from '@/app/components/Loding'
 
 interface Props {
     id: number,
@@ -14,29 +16,35 @@ interface Props {
 
 export default function Computadores() {
     const [product, setProduct] = useState([])
+    const [lodin, setLodin] = useState(true)
 
     useEffect(() => {
         fechProduct('computadores').then((response) => {
             setProduct(response)
+            setLodin(false)
         })
     }, [])
 
-    console.log(product)
-
     
     return (
-        <div className={styles.produtoMain}>
-            {product.map((produtos: Props) => {
-                return <div key={produtos.id} className={styles.produtoCart}>
-                <div className={styles.produto}>
-                    <Image src={produtos.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt={produtos.title} width={150} height={150} className={styles.imgproduto} />
+        <>
+            {lodin ? <Loding /> : <>
+            <div className={styles.produtoMain}>
+                {product.map((produtos: Props) => {
+                    return <div key={produtos.id} className={styles.produtoCart}>
+                        <Link href={`../Product/${produtos.id}`}>
+                            <div className={styles.produto}>
+                                <Image src={produtos.thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt={produtos.title} width={150} height={150} className={styles.imgproduto} />
+                            </div>
+                            <p className={styles.titleProduct}>{produtos.title}</p>
+                            <p>R$ {produtos.price}</p>
+                        </Link><button type="button" className={styles.cart_add_cart}>
+                                <ShoppingCart />
+                            </button>
                 </div>
-                <Link href={`../Product/${produtos.id}`} key={produtos.id}>
-                    <p className={styles.titleProduct}>{produtos.title}</p>
-                    <p>R$ {produtos.price}</p>
-                </Link>
-            </div>
-            })}
-        </div>
+                
+                })}
+            </div></>}
+        </>
     )
 }

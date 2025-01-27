@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import fechProduct from '../api/fechProduct'
 import Link from 'next/link'
+import Loding from './Loding'
 
 interface Props {
     id: string | number,
@@ -52,7 +53,7 @@ export default function ItemSecundario() {
                     
                     </>
                 ): (
-                    <p>Carregando</p>
+                    <Loding />
                 )}
                 
 
@@ -71,7 +72,7 @@ export default function ItemSecundario() {
                     
                     </>
                 ): (
-                    <p>Carregando</p>
+                    <Loding />
                 )}
 
                 {monitor ? (
@@ -88,7 +89,7 @@ export default function ItemSecundario() {
                     
                     </>
                 ): (
-                    <p>Carregando</p>
+                    <Loding />
                 )}
             </div>
         </>

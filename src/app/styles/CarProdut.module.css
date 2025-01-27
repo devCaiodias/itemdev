@@ -12,6 +12,13 @@
     margin-top: 50px;
     margin-bottom: 50px;
     color: black;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    max-width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .produtoCart a {
@@ -36,4 +43,23 @@
     width: 200px;
     display: block;
     margin-bottom: 20px;
+}
+
+.cart_add_cart {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.produtoCart:hover .cart_add_cart {
+    display: flex;
 }

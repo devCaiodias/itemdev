@@ -37,8 +37,3 @@
 .link_nav:hover {
     border-bottom: 2px solid black;
 }
-
-.carrinho {
-    text-transform: uppercase;
-    margin-right: 1.5rem;
-}
