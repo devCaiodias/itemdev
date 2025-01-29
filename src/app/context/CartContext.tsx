@@ -12,12 +12,22 @@ interface CartContextType {
     cart: Product[]
     addToCart: (product: Product) => void
     removeFromCart: (id: number | string) => void
+    isCartVisible: boolean
+    setIsCartVisible: (visible: boolean) => void
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined) 
 
+export function useCart() {
+    const context = useContext(CartContext)
+    if (!context) throw new Error('useCart deve ser usado dentro de um CartProvider')
+    
+    return context
+}
+
 export function CratProvider({ children }: { children: React.ReactNode }) {
     const [ cart, setCart] = useState<Product[]>([])
+    const [isCartVisible, setIsCartVisible] = useState(false)
 
     useEffect(() => {
         const storedCart = localStorage.getItem('cart')
@@ -39,15 +49,9 @@ export function CratProvider({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, removeFromCart}}>
+        <CartContext.Provider value={{cart, addToCart, removeFromCart, isCartVisible, setIsCartVisible}}>
             {children}
         </CartContext.Provider>
     )
 }
 
-export function useCart() {
-    const context = useContext(CartContext)
-    if (!context) throw new Error('useCart deve ser usado dentro de um CartProvider')
-    
-    return context
-}

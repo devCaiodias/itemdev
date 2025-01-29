@@ -4,20 +4,28 @@ import CartItens from './CartItens'
 import { useCart } from '../context/CartContext'
 
 export default function Cart() {
-    const {cart, removeFromCart} = useCart()
+    const {cart, removeFromCart, isCartVisible } = useCart()
+    
+
+    const totalPrice = cart.reduce((acc, item) => {
+        return item.price + acc
+    }, 0.0)
     
     return (
-        <section className={styles.cart}>
-            <div className={styles.cart_itens}>
-                {cart.length > 0 ? (
-                    cart.map((item) => <CartItens key={item.id} data={item} removeFromCart={removeFromCart} />)
-                ): (
-                    <h2>Adicione item no seu carrinho</h2>
-                )}
+        <>
+            <section className={`${styles.cart} ${isCartVisible ? `${styles.cart__active} `:` ''`}`}>
+                <div className={styles.cart_itens}>
+                    {cart.length > 0 ? (
+                        cart.map((item) => <CartItens key={item.id} data={item} removeFromCart={removeFromCart} />)
+                    ): (
+                        <h2></h2>
+                    )}
 
-            </div>
+                </div>
 
-            <div className={styles.cart_resumo}> resumo do carrinho</div>
-        </section>
+                <div className={styles.cart_resumo}> valor Total: R$ {totalPrice} </div>
+            </section>
+        </>
+        
     )
 }

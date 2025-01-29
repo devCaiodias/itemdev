@@ -6,6 +6,10 @@
     margin-bottom: 20px;
 }
 
+.cart_iten:last-child {
+    border-bottom: none;
+}
+
 .cart_item_img {
     width: 90px;
     height: 90px;
@@ -28,11 +32,11 @@
 }
 
 .btn_remove_cart {
-    position: absolute;
-    right: 40;
+    /* position: absolute; */
     border: none;
     background: none;
     cursor: pointer;
+    padding-left: 100px;
 }
 
 .btn_remove_cart:hover {
