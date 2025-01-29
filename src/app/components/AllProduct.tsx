@@ -3,6 +3,7 @@ import Computadores from '../pagina/computadores/page';
 import Hedset from '../pagina/hedset/page';
 import Monitor from '../pagina/monitor/page';
 import Mouse from '../pagina/mouse/page';
+import Teclado from '../pagina/teclado/page';
 import styles from '../styles/AllProduct.module.css'
 import { useState } from 'react';
 
@@ -17,6 +18,7 @@ export default function AllProduct() {
                 <button onClick={() => setCategory("computadores")}>Computadores</button>
                 <button onClick={() => setCategory("monitor")}>Monitor</button>
                 <button onClick={() => setCategory("mouse")}>Mouse</button>
+                <button onClick={() => setCategory("teclado")}>Teclado</button>
             </div>
             <div>
                 {category === 'hedset' && (
@@ -25,6 +27,7 @@ export default function AllProduct() {
                 {category === "computadores" && (<Computadores/>)}
                 {category === "monitor" && (<Monitor/>)}
                 {category === "mouse" && (<Mouse/>)}
+                {category === "teclado" && (<Teclado/>)}
             </div>
         </div>
     )
