@@ -1,11 +1,14 @@
 'use client'
 import Image from 'next/image'
 import styles from '../../styles/CarProdut.module.css'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import fechProduct from '../../api/fechProduct'
 import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
 import Loding from '@/app/components/Loding'
+
+import { useCart } from '@/app/context/CartContext'
+
 
 interface Props {
     id: number,
@@ -17,6 +20,8 @@ interface Props {
 export default function Monitor() {
     const [product, setProduct] = useState([])
     const [lodin, setLodin] = useState(true)
+
+    const { addToCart } = useCart()
 
     useEffect(() => {
         fechProduct('monitor').then((response) => {
@@ -38,7 +43,7 @@ export default function Monitor() {
                             <p className={styles.titleProduct}>{produtos.title}</p>
                             <p>R$ {produtos.price}</p>
                         </Link>
-                        <button type="button" className={styles.cart_add_cart}>
+                        <button type="button" className={styles.cart_add_cart} onClick={() => addToCart(produtos)}>
                                 <ShoppingCart />
                         </button>
                 </div>

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "../../styles/ProdutoDetalhe.module.css";
 import { useState, useEffect } from "react";
+import { useCart } from "@/app/context/CartContext";
 
 type Props = {
   params: { idproduto: string | number };
@@ -10,7 +11,8 @@ type Props = {
 export default function ProdutoDetalhe({ params }: Props) {
   const [produto, setProduto] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
+  
+  const { addToCart } = useCart()
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -25,6 +27,7 @@ export default function ProdutoDetalhe({ params }: Props) {
 
     fetchProduct();
   }, [params.idproduto]);
+
 
   if (!produto) return <p>Carregando...</p>;
 
@@ -52,7 +55,7 @@ export default function ProdutoDetalhe({ params }: Props) {
           </button>
         ))}
       </div>
-        <button type="button" className={styles.add_cart}>Add Carrinho</button>
+        <button type="button" className={styles.add_cart} onClick={() => addToCart(produto)}>Add Carrinho</button>
       </div>
     </div>
   );

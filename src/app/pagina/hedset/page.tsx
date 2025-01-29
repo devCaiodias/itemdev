@@ -6,6 +6,7 @@ import fechProduct from '../../api/fechProduct'
 import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
 import Loding from '@/app/components/Loding'
+import { useCart } from '@/app/context/CartContext'
 
 interface Props {
     id: number,
@@ -17,6 +18,8 @@ interface Props {
 export default function Hedset() {
     const [product, setProduct] = useState([])
     const [lodin, setLodin] = useState(true)
+
+    const { addToCart } = useCart()
 
     useEffect(() => {
         fechProduct('hedset').then((response) => {
@@ -38,7 +41,7 @@ export default function Hedset() {
                             </div>
                             <p className={styles.titleProduct}>{produtos.title}</p>
                             <p>R$ {produtos.price}</p>
-                        </Link><button type="button" className={styles.cart_add_cart}>
+                        </Link><button type="button" className={styles.cart_add_cart} onClick={() => addToCart(produtos)}>
                                 <ShoppingCart />
                             </button>
                 </div>

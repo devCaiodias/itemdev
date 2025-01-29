@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MainContainer from "./components/layout/MainContainer";
+import {CratProvider} from './context/CartContext'
 
 export const metadata: Metadata = {
   title: "itemdev",
@@ -15,9 +16,12 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <MainContainer>
-          {children}
-        </MainContainer>
+        <CratProvider>
+          <MainContainer>
+              {children}
+
+          </MainContainer>
+        </CratProvider>
       </body>
     </html>
   );
