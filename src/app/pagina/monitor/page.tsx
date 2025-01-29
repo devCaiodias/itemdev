@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from '../../styles/CarProdut.module.css'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import fechProduct from '../../api/fechProduct'
 import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
@@ -24,7 +24,6 @@ export default function Monitor() {
             setLodin(false)
         })
     }, [])
-
     
     return (
         <>
@@ -38,9 +37,10 @@ export default function Monitor() {
                             </div>
                             <p className={styles.titleProduct}>{produtos.title}</p>
                             <p>R$ {produtos.price}</p>
-                        </Link><button type="button" className={styles.cart_add_cart}>
+                        </Link>
+                        <button type="button" className={styles.cart_add_cart}>
                                 <ShoppingCart />
-                            </button>
+                        </button>
                 </div>
                 
                 })}

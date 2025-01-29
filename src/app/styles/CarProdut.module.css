@@ -62,4 +62,5 @@
 
 .produtoCart:hover .cart_add_cart {
     display: flex;
+    color: blue;
 }

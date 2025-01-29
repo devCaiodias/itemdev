@@ -1,5 +1,6 @@
 import NavBar from "../NavBar"
 import Foter from "../Foter"
+import Cart from "../Cart"
 
 interface Props {
     children: React.ReactNode
@@ -10,9 +11,10 @@ interface Props {
 export default function MainContainer({children}: Readonly<Props>) {
     return (
         <>
-            <NavBar />
-            {children}
-            <Foter />
+                <Cart />
+                <NavBar />
+                {children}
+                <Foter />
         </>
     )
 }
