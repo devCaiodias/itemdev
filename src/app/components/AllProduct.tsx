@@ -8,7 +8,7 @@ import styles from '../styles/AllProduct.module.css'
 import { useState } from 'react';
 
 export default function AllProduct() {
-    const [category, setCategory] = useState<String>("hedset");
+    const [category, setCategory] = useState("hedset");
     return (
         <div>
             <h1 className={styles.textomain}>All Package</h1>

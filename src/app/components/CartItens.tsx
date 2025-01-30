@@ -1,6 +1,5 @@
 import styles from '../styles/CartItens.module.css'
 import Image from 'next/image'
-import imagemm from '../../../public/download (2).jpg'
 import { Popcorn } from 'lucide-react'
 
 interface CartItemProps {
