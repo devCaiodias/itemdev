@@ -1,0 +1,27 @@
+.criador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_criador {
+    /* border-radius: 30%; */
+}
+
+.titleCriador {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.criador_description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.decription {
+    margin: auto 0;
+    width: 500px;
+    text-align: center;
+}

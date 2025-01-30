@@ -11,6 +11,8 @@ type Props = {
 export default function ProdutoDetalhe({ params }: Props) {
   const [produto, setProduto] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const {isCartVisible, setIsCartVisible } = useCart()
   
   const { addToCart } = useCart()
   useEffect(() => {
@@ -56,6 +58,7 @@ export default function ProdutoDetalhe({ params }: Props) {
         ))}
       </div>
         <button type="button" className={styles.add_cart} onClick={() => addToCart(produto)}>Add Carrinho</button>
+        <button type="button" className={styles.add_cart} onClick={() => setIsCartVisible(!isCartVisible)}>Ver Carrinho</button>
       </div>
     </div>
   );

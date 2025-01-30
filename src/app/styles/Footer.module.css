@@ -28,8 +28,14 @@
     padding: 10px;
 }
 
-.footer_linck p {
-    padding: 0px 20px 0px 0px;
+.footer_linck .linkkk {
+    margin: 0px 20px 0px 0px;
+    text-decoration: none;
+    color: black;
+}
+
+.footer_linck .linkkk:hover { 
+    border-bottom: 1px solid black;
 }
 
 .copyright {
@@ -56,11 +62,13 @@
 .git {
     padding: 5px;
     text-align: center;
+    color: black;
 }
 
 .linkedin {
     padding: 5px;
     padding-left: 30px;
+    color: black;
 }
 
 .email {
