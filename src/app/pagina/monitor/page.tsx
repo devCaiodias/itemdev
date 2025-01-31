@@ -43,7 +43,7 @@ export default function Monitor() {
                             <p className={styles.titleProduct}>{produtos.title}</p>
                             <p>R$ {produtos.price}</p>
                         </Link>
-                        <button type="button" className={styles.cart_add_cart} onClick={() => addToCart(produtos)}>
+                        <button type="button" className={styles.cart_add_cart} onClick={() => addToCart({...produtos, quantity: 1})}>
                                 <ShoppingCart />
                         </button>
                 </div>

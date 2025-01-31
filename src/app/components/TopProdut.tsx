@@ -13,6 +13,7 @@ interface Product {
     title: string;
     price: number;
     thumbnail: string;
+    quantity: number
 }
 
 export default function TopProdut() {
@@ -28,7 +29,8 @@ export default function TopProdut() {
                     id: product.id,
                     title: product.title,
                     price: product.price, // Certificando-se de que o preço está presente
-                    thumbnail: product.thumbnail
+                    thumbnail: product.thumbnail,
+                    quantity: product.quantity
                 });
             }
         })

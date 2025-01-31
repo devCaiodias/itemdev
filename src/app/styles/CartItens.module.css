@@ -31,6 +31,30 @@
     font-weight: 500;
 }
 
+.imcrement__item {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.decrement__item {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.imcrement__item:hover {
+    color: green;
+}
+
+.decrement__item:hover {
+    color: red;
+}
+
 .btn_remove_cart {
     /* position: absolute; */
     border: none;

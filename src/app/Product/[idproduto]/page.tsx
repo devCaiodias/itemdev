@@ -11,6 +11,7 @@ interface Product {
   price: number;
   pictures: { id: string; secure_url: string }[];
   thumbnail: string; // Adicionando a propriedade thumbnail
+  quantity: number
 }
 
 type Props = {

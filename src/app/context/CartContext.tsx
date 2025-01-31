@@ -6,12 +6,15 @@ interface Product {
     title: string,
     price: number,
     thumbnail: string
+    quantity: number
 }
 
 interface CartContextType {
     cart: Product[]
     addToCart: (product: Product) => void
     removeFromCart: (id: number | string) => void
+    incrementItem: (id: number | string) => void
+    decrementItem: (id: number | string) => void
     isCartVisible: boolean
     setIsCartVisible: (visible: boolean) => void
 }
@@ -41,7 +44,29 @@ export function CratProvider({ children }: { children: React.ReactNode }) {
     }, [cart])
 
     function addToCart(product: Product) {
-        setCart((prevCart) => [...prevCart, product])
+        setCart((prevCart) => {
+            const existingItem = prevCart.find(item => item.id === product.id)
+
+            if (existingItem) {
+                return prevCart.map(item => item.id === product.id ? {...item, quantity: item.quantity + 1}: item)
+            }else {
+                return [...prevCart, {...product, quantity: 1}]
+            }
+        })
+    }
+
+    function incrementItem(id: number | string) {
+        setCart((prevCart) =>
+            prevCart.map(item => item.id === id ? { ...item, quantity: item.quantity + 1 } : item)
+        )
+    }
+
+    function decrementItem(id: number | string) {
+        setCart((prevCart) =>
+            prevCart.map(item => 
+                item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+            ).filter(item => item.quantity > 0) // Remove itens com quantidade 0
+        )
     }
 
     function removeFromCart(id: number | string) {
@@ -49,7 +74,7 @@ export function CratProvider({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, removeFromCart, isCartVisible, setIsCartVisible}}>
+        <CartContext.Provider value={{cart, addToCart, removeFromCart, isCartVisible, incrementItem, decrementItem, setIsCartVisible}}>
             {children}
         </CartContext.Provider>
     )
