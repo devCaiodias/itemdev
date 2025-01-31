@@ -49,7 +49,7 @@ export default function ProdutoDetalhe({ params }: Props) {
     <div className={styles.produtoDetalhe}>
       <div className={styles.imagemGrande}>
         {selectedImage && (
-          <Image src={selectedImage} alt={produto.title} width={400} height={400} />
+          <Image src={selectedImage} alt={produto.title} width={400} height={400} className={styles.imgGrande} />
         )}
       </div>
 
