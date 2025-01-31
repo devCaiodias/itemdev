@@ -41,7 +41,7 @@
     margin-left: 40px;
 }
 
-@media screen and (min-width: 393px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 956px) { 
     .topcontainer {
         display: block;
         text-align: center;
@@ -63,6 +63,5 @@
         width: 300px;
         height: 300px;
     }
-
 
 }

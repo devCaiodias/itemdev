@@ -37,12 +37,16 @@
 }
 
 
-@media screen and (min-width: 393px) and (max-width: 480px) { 
+
+
+
+@media screen and (min-width: 320px) and (max-width: 956px) { 
     .containerItem {
-        display: block;
+        display: grid;
         margin-top: 30px;
         text-align: center;
         justify-items: center;
+        grid-template-columns: repeat(auto-fill, 1fr);
     }
 
     .infoitem {
@@ -54,3 +58,24 @@
     }
 
 }
+
+/* @media screen and (min-width: 480px) and (max-width: 1150px) { 
+    .containerItem {
+        display: grid;
+        margin-top: 30px;
+        align-items: center;
+        justify-items: center;
+        gap: 0;
+    }
+} */
+/* 
+@media screen and (min-width: 820px) and (max-width: 1180px) { 
+    .containerItem {
+        display: flex;
+        /* margin-top: 30px;
+        align-items: center;
+        justify-items: center;
+        gap: 0; 
+    }
+}
+*/
