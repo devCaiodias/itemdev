@@ -19,5 +19,20 @@
 }
 
 .navCategoria button:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid black;
+}
+
+@media screen and (min-width: 393px) and (max-width: 480px) { 
+    .navCategoria{ 
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 90px);
+        margin: none;
+    }
+
+    .navCategoria button{
+        display: flex;
+        padding: 10px; 
+        align-items: center;
+        justify-content: center;
+    }
 }

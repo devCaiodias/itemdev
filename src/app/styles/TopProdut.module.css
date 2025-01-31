@@ -40,3 +40,29 @@
 .imgtopitem {
     margin-left: 40px;
 }
+
+@media screen and (min-width: 393px) and (max-width: 480px) {
+    .topcontainer {
+        display: block;
+        text-align: center;
+        margin: auto;
+        background: none;
+    }
+
+    .info {
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .info p {
+        font-size: 1.3rem;
+    }
+
+    .imgtopitem {
+        margin: 0;
+        width: 300px;
+        height: 300px;
+    }
+
+
+}

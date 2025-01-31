@@ -78,3 +78,27 @@
 .email span {
     color: rgb(255, 115, 0);
 }
+
+@media screen and (min-width: 393px) and (max-width: 480px) {
+    .footer_container {
+        display: block;
+        text-align: center;
+    }
+
+    .link_copy {
+        border: none;
+    }
+    
+    .footer_linck .linkkk {
+        margin: auto;
+    }
+
+    .copyright { 
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .midias_social { 
+        border: none;
+    }
+}
