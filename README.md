@@ -20,7 +20,7 @@ Durante o desenvolvimento deste projeto, aprimorei meus conhecimentos em:
 
 📷 Imagens do Projeto
 
-<img src="../itemdev/public/projeto.png" height="400px" />
+<img src="https://i.pinimg.com/1200x/68/3a/14/683a14626de2fce2244bd38031ec6be4.jpg" height="400px" />
 
 📂 Como rodar o projeto?
 
