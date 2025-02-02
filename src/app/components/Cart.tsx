@@ -2,6 +2,7 @@
 import styles from '../styles/Cart.module.css'
 import CartItens from './CartItens'
 import { useCart } from '../context/CartContext'
+import ShopingCart from './ShopingCart'
 
 export default function Cart() {
     const { cart, isCartVisible } = useCart()
@@ -13,15 +14,18 @@ export default function Cart() {
     return (
         <>
             <section className={`${styles.cart} ${isCartVisible ? `${styles.cart__active} ` : ''}`}>
+                <div className={styles.icon_shoping}>
+                    <ShopingCart />
+                </div>
                 <div className={styles.cart_itens}>
                     {cart.length > 0 ? (
                         cart.map((item) => <CartItens key={item.id} data={item} />)
                     ) : (
-                        <h2>Seu carrinho está vazio</h2>
+                        <h2></h2>
                     )}
                 </div>
 
-                <div className={styles.cart_resumo}>Valor Total: R$ {totalPrice.toFixed(2)}</div>
+                <div className={styles.cart_resumo}>Valor Total: R$ {totalPrice.toFixed(2)} </div>
             </section>
         </>
     )
