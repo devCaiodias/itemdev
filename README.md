@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛒 <a href="https://itemdev-protagonistaaas-projects.vercel.app/">ItemDev</a> - E-commerce de Tecnologia
 
-## Getting Started
+Este projeto é uma aplicação de e-commerce focada em produtos de tecnologia. Ele foi desenvolvido com o objetivo de aprimorar minhas habilidades em desenvolvimento web, incluindo integração de frontend com backend, manipulação de estados e gerenciamento de um carrinho de compras.
 
-First, run the development server:
+🚀 Tecnologias Utilizadas
+
+Frontend: React, Next.js, TypeScript
+Backend: API do Mercado livre
+Estilização: CSS module
+Gerenciamento de Estado: Context API
+
+📌 O que eu aprendi?
+
+Durante o desenvolvimento deste projeto, aprimorei meus conhecimentos em:
+
+✅ Consumo de APIs e manipulação de dados no frontend
+✅ Gerenciamento de estado global com Context API
+✅ Estilização responsiva e acessível com CSS module
+✅ Implementação de um carrinho de compras funcional
+
+📷 Imagens do Projeto
+
+<img src="../itemdev/public/projeto.png" height="400px" />
+
+📂 Como rodar o projeto?
+
+Clone este repositório:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git clone https://github.com/seu-usuario/itemdev.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Instale as dependências:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
+```
 
-## Learn More
+Inicie o JSON Server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run server
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Rode o projeto:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
 
-## Deploy on Vercel
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Acesse no navegador: http://localhost:3000
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📩 Contato
+
+Caso queira trocar ideias sobre o projeto, me chame no <a href="https://www.linkedin.com/in/caio-dias-martins-26739b251/">LinkedIn! </a> 😊
